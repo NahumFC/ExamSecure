@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aerosecure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="contenedor-formulario contenedor">
+        <div class="imagen-formulario">
+            <video id="video" width="640" height="480" autoplay></video>
+            <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+            <form id="recognitionForm" class="formulario">
+                <div class="input">
+                    <input type="button" value="Iniciar Reconocimiento Facial" id="recognition" onclick="submitRecognition()">
+                    <br><br>
+                    <button type="button" onclick="window.location.href='/login'" class="boton-envio">Cerrar Sesión</button>
+                </div>
+            </form>
+        </div>
+        <div id="alumnosInfo" class="informacion-alumnos">
+            <!-- Aquí se muestra toda la info de los delincuentes -->
+        </div>
+    </div>
+    <script>
+        // Acceder a la cámara y mostrarla en el elemento 'video'
+        const video = document.getElementById('video');
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(err => {
+                console.error("Error al acceder a la cámara: ", err);
+            });
+
+        function submitRecognition() {
+            const canvas = document.getElementById('canvas');
+            const context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const imageDataURL = canvas.toDataURL('image/png');
+
+            const data = {
+                imagen_facial: imageDataURL.split(',')[1] // Enviar solo los datos de la imagen
+            };
+
+            fetch('http://127.0.0.1:5000/recognition', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.status === "success") {
+                    displayRecognitionInfo(result.data);
+                } else {
+                    alert(result.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        function displayRecognitionInfo(data) {
+            const infoDiv = document.getElementById('alumnosInfo');
+            infoDiv.innerHTML = `
+                <p><strong>Nombre:</strong> ${data.nombre}</p>
+                <p><strong>Apellido:</strong> ${data.apellido}</p>
+                <p><strong>Genero:</strong> ${data.genero}</p>
+                <p><strong>Edad:</strong> ${data.edad}</p>
+                <p><strong>Nacionalidad:</strong> ${data.nacionalidad}</p>
+                <p><strong>CURP:</strong> ${data.curp}</p>
+                <p><strong>Escuela de aplicación de examen:</strong> ${data.APLescuela}</p>
+                <p><strong>Turno de aplicación de examen:</strong> ${data.APLturno}</p>
+                <p><strong>Tipo de Examen:</strong> ${data.tipoexa}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
