@@ -65,6 +65,7 @@ def send_image(filename):
     return send_from_directory('D:\ExamSecure\images_alumnos', filename)
 
 
+
 def validate_face(imagen_base64, user_encoding):
     try:
         im_bytes = base64.b64decode(imagen_base64)   

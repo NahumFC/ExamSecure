@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
         var imageDataURL = canvas.toDataURL('image/png');
 
-        var numeroTrabajador = document.getElementById('numero_trabajador').value;
+        var numeroTrabajador = document.getElementById('numero_aplica').value;
         var password = document.getElementById('password').value;
 
         // Envia los datos al servidor

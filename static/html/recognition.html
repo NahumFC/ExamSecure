@@ -4,30 +4,140 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Aerosecure</title>
+    <title>TestGuardPRO</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tiny5&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/normalize.css">
     <link rel="stylesheet" href="/static/css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/static/FontAwesome/fontawesome-free-6.5.2-web/css/all.css" rel="stylesheet"/>
+    <style>
+        .brand-logo {
+            color: white !important;
+        }
+        .tiny5-regular {
+            font-family: "Tiny5", sans-serif;
+            font-weight: 1000;
+            font-style: normal;
+        }
+        .poppins-bold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+        .custom-background {
+            background-color: white;
+            padding: 20px;
+        }
+        body {
+            background-image: url('/static/images/x.avif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        .container-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 20px;
+        }
+        .video-container {
+            flex: 1;
+        }
+        .info-container {
+            flex: 1;
+            margin-left: 20px;
+            color: white; /* Texto en color blanco */
+        }
+    </style>
 </head>
 <body>
-    <div class="contenedor-formulario contenedor">
-        <div class="imagen-formulario">
+    <nav class="blue darken-4" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo tiny5-regular">TestGuardPRO</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a class="waves-effect waves-light btn poppins-bold" href="">Inicio</a></li>
+            </ul>
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="#">Iniciar Sesión</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                <h1 class="header center white-text tiny5-regular">TestGuardPRO</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light poppins-bold orange-text text-accent-3">Sistema de Reconocimiento Facial para Exámenes Presenciales</h5>
+                </div>
+                <div class="row center">
+                    <i class="fa-solid fa-camera-retro fa-fade fa-5x" style="color: #0efff3;"></i>
+                </div>
+                <br><br>
+            </div>
+        </div>
+        <div class="parallax"><img src="/static/images/2.jpg" alt="Unsplashed background img 1"></div>
+    </div>
+
+    <div class="container-flex">
+        <div class="video-container">
             <video id="video" width="640" height="480" autoplay></video>
             <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
-            <form id="recognitionForm" class="formulario">
-                <div class="input">
+            <form id="recognitionForm">
+                <div class="input container center">
                     <input type="button" value="Iniciar Reconocimiento Facial" id="recognition" onclick="submitRecognition()">
                     <br><br>
-                    <button type="button" onclick="window.location.href='/login'" class="boton-envio">Cerrar Sesión</button>
+                    <button type="button" onclick="window.location.href='/login'" class="waves-effect waves-light btn poppins-bold">Cerrar Sesión</button>
                 </div>
             </form>
         </div>
-        <div id="alumnosInfo" class="informacion-alumnos">
-            <!-- Aquí se muestra toda la info de los delincuentes -->
+        <div id="alumnosInfo" class="info-container">
+            <!-- Aquí se muestra toda la info de los alumnos -->
+            <div id="imagenPersona"></div>
         </div>
     </div>
+
+    <footer class="page-footer blue darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text tiny5-regular">SISTEMA DE RECONOCIMIENTO FACIAL</h5>
+                    <p class="grey-text text-lighten-4">Nuestro sistema tiene la finalidad de evitar la suplantación de identidad para los exámenes presenciales, principalmente enfocado en exámenes de gran peso e importancia.</p>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Desarrollador</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Acevedo Romo Jimena Olivia</a></li>
+                        <li><a class="white-text" href="#!">Flores Cornejo David Nahum</a></li>
+                        <li><a class="white-text" href="#!">Licea Castro Leonardo</a></li>
+                        <li><a class="white-text" href="#!">Zamora Montoya Laura Ivanna</a></li>
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Contacto</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">(52)-55-2343-2453</a></li>
+                        <li><a class="white-text" href="#!">(52)-55-7283-1092</a></li>
+                        <li><a class="white-text" href="#!">(52)-55-9012-9302</a></li>
+                        <li><a class="white-text" href="#!">(52)-55-8394-9203</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Formación <a class="brown-text text-lighten-3" href="http://materializecss.com">ESCOM IPN - MX</a>
+            </div>
+        </div>
+    </footer>
+
     <script>
         // Acceder a la cámara y mostrarla en el elemento 'video'
         const video = document.getElementById('video');
@@ -46,7 +156,7 @@
             const imageDataURL = canvas.toDataURL('image/png');
 
             const data = {
-                imagen_facial: imageDataURL.split(',')[1] // Enviar solo los datos de la imagen
+                imagen_facial: imageDataURL.split(',')[1]
             };
 
             fetch('http://127.0.0.1:5000/recognition', {
@@ -71,10 +181,13 @@
 
         function displayRecognitionInfo(data) {
             const infoDiv = document.getElementById('alumnosInfo');
+            const imgDiv = document.getElementById('imagenPersona');
+            const nombreArchivo = `${data.nombre}_${data.apellido}.png`;
+            const imagePath = `http://localhost:5002/images_alumnos/${nombreArchivo}`;
             infoDiv.innerHTML = `
                 <p><strong>Nombre:</strong> ${data.nombre}</p>
                 <p><strong>Apellido:</strong> ${data.apellido}</p>
-                <p><strong>Genero:</strong> ${data.genero}</p>
+                <p><strong>Género:</strong> ${data.genero}</p>
                 <p><strong>Edad:</strong> ${data.edad}</p>
                 <p><strong>Nacionalidad:</strong> ${data.nacionalidad}</p>
                 <p><strong>CURP:</strong> ${data.curp}</p>
@@ -82,7 +195,14 @@
                 <p><strong>Turno de aplicación de examen:</strong> ${data.APLturno}</p>
                 <p><strong>Tipo de Examen:</strong> ${data.tipoexa}</p>
             `;
+            imgDiv.innerHTML = `<img src="${imagePath}" alt="Fotografía de ${data.nombre} ${data.apellido}" style="width:200px;height:auto;">`;
+            console.log(`Imagen cargada desde: ${imagePath}`);
         }
     </script>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="/static/js/materialize.js"></script>
+    <script src="/static/js/init.js"></script>
 </body>
 </html>

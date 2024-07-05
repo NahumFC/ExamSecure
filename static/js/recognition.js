@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         .then(data => {
             if (data.status === "success") {
                 alert("Reconocimiento facial exitoso: " + data.message);
-                displayDelincuenteInfo(data.data);
+                displayAlumnoInfo(data.data);
             } else {
                 alert("Reconocimiento facial fallido: " + data.message);
             }
@@ -39,20 +39,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
     });
 
-    function displayDelincuenteInfo(delincuente) {
-        const infoDiv = document.getElementById('delincuentesInfo');
+    function displayAlumnoInfo(alumno) {
+        const infoDiv = document.getElementById('alumnosInfo');
+        const imgDiv = document.getElementById('imagenPersona');
         infoDiv.style.display = 'block'; 
     
-        const cargosConSaltosDeLinea = delincuente.cargos.replace(/;/g, '<br>');
-        const nombreArchivo = `${delincuente.nombre}_${delincuente.apellido}.png`;
-        const imagePath = `http://localhost:5002/images_INTERPOL/${nombreArchivo}`;
+        const nombreArchivo = `${alumno.nombre}_${alumno.apellido}.png`;
+        const imagePath = `http://localhost:5002/images_alumnos/${nombreArchivo}`;
     
-        infoDiv.innerHTML = `<p>Nombre: ${delincuente.nombre} ${delincuente.apellido}</p>
-                             <p>Nacionalidad: ${delincuente.nacionalidad}</p>
-                             <img src="${imagePath}" alt="Fotografía de ${delincuente.nombre} ${delincuente.apellido}" style="width:200px;height:auto;">
-                             <p>Cargos:<br>${cargosConSaltosDeLinea}</p>
-                             <button id="callPoliceButton">Llamar a la policía</button>`;
+        infoDiv.innerHTML = `<p><strong>Nombre:</strong> ${alumno.nombre}</p>
+                             <p><strong>Apellido:</strong> ${alumno.apellido}</p>
+                             <p><strong>Género:</strong> ${alumno.genero}</p>
+                             <p><strong>Edad:</strong> ${alumno.edad}</p>
+                             <p><strong>Nacionalidad:</strong> ${alumno.nacionalidad}</p>
+                             <p><strong>CURP:</strong> ${alumno.curp}</p>
+                             <p><strong>Escuela de aplicación de examen:</strong> ${alumno.APLescuela}</p>
+                             <p><strong>Turno de aplicación de examen:</strong> ${alumno.APLturno}</p>
+                             <p><strong>Tipo de Examen:</strong> ${alumno.tipoexa}</p>`;
+        imgDiv.innerHTML = `<img src="${imagePath}" alt="Fotografía de ${alumno.nombre} ${alumno.apellido}" style="width:200px;height:auto;">`;
+        console.log(`Imagen cargada desde: ${imagePath}`);
     }
-    
-    
 });

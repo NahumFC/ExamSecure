@@ -10,12 +10,97 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/normalize.css">
     <link rel="stylesheet" href="/static/css/styles.css">
+
+      <!--IMPORTACIONES REQUERIDAS MATERIALIZE-->
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!--IMPORTACIONES REQUERIDAS FONT AWESOME-->
+  <link href="/static/FontAwesome/fontawesome-free-6.5.2-web/css/all.css" rel="stylesheet"/>
+
+  <!--FUENTES DE GOOGLE-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiny5&display=swap" rel="stylesheet">
+ 
+
+  <style>
+    .brand-logo {
+      color: white !important; /* Color blanco para el logo */
+    }
+
+    .tiny5-regular {
+    font-family: "Tiny5", sans-serif;
+    font-weight: 1000;
+    font-style: normal;
+    }
+
+   .poppins-bold {
+   font-family: "Poppins", sans-serif;
+   font-weight: 700;
+   font-style: normal;
+   }
+
+   .custom-background {
+    background-color: white;
+    padding: 20px; /* Esto es opcional, agrega espacio alrededor del formulario */
+   }
+  
+
+  </style>
+
 </head>
 <body>
+
+    <nav class="blue darken-4" role="navigation">
+        <div class="nav-wrapper container">
+          <a id="logo-container" href="#" class="brand-logo tiny5-regular">TestGuardPRO</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a class="waves-effect waves-light btn poppins-bold" href="">Inicio</a></li>
+          </ul>
+      
+          <ul id="nav-mobile" class="sidenav">
+            <li><a href="#">Iniciar Sesión</a></li>
+          </ul>
+          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+
+    <div id="index-banner" class="parallax-container">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <br><br>
+          <h1 class="header center white-text tiny5-regular">TestGuardPRO</h1>
+          <div class="row center">
+            <h5 class="header col s12 light poppins-bold orange-text text-accent-3">Sistema de Reconocimiento Facial para Examenes Presenciales</h5>
+          </div>
+          
+          <div class="row center">
+            
+            <i class="fa-solid fa-camera-retro fa-fade fa-5x" style="color: #0efff3;"></i>
+          </div>
+          <br><br>
+        </div>
+      </div>
+      <div class="parallax"><img src="/static/images/3.avif" alt="Unsplashed background img 1"></div>
+    </div>
+
+    <nav class="blue darken-4" role="navigation">
+      <div class="nav-wrapper container">
+      
+      </div>
+  </nav>
+
+<br><br>
     <div class="contenedor-formulario contenedor">
         <div class="texto-formulario">
             <p><img src="/static/images/Logo.png" width="200" height="200"/>
-                <br>Inicio de sesión Aerosecure
+                <br>Inicio de sesión TestGuardPRO
             </p>
         </div>
         <div class="imagen-formulario">
@@ -37,6 +122,119 @@
             </div>
         </form>
     </div>
+
+    <br><br>
+
+    <div class="container">
+      <div class="section">
+  
+        <!--   Icon Section   -->
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center"><i class="fa-solid fa-computer" style="color: #1e3a6c;"></i></h2>
+              <h5 class="center poppins-bold">Una herramienta portable y eficiente</h5>
+  
+              <p class="light">Un sistema de acceso web que te permitira aplicar pruebas de validación de identidad sin importar la zona o región en la que te encuentres.</p>
+            </div>
+          </div>
+  
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center"><i class="fa-solid fa-graduation-cap" style="color: #1e3a6c;"></i></h2>
+              <h5 class="center poppins-bold">Orientada al ambito academico</h5>
+  
+              <p class="light">Facilita tu trabajo al momento de evitar la suplantación de identidad, pues con esta herramienta podras realizar esta tarea de manera efectiva y rapida.</p>
+            </div>
+          </div>
+  
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center brown-text"><i class="fa-solid fa-brain" style="color: #1e3a6c;"></i></h2>
+              <h5 class="center poppins-bold">Un sistema inteligente de gran poder</h5>
+  
+              <p class="light">Un sistema con un gran nivel de detalle, que es imposible de vulnerar, gracias a sus sistemas de seguridad y verificación fiables con certificación G5.</p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+
+    <br><br>
+    <div class="parallax-container valign-wrapper">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <div class="row center">
+            <h5 class="header col s12 light poppins-bold">Validación y verificación de identidades.</h5>
+          </div>
+        </div>
+      </div>
+      <div class="parallax"><img src="/static/images/fondo3.webp" alt="Unsplashed background img 3"></div>
+    </div>
+
+    <br><br>
+
+    <div class="container">
+      <div class="section">
+  
+        <div class="row">
+          <div class="col s12 center">
+            <h3><i class="mdi-content-send brown-text"></i></h3>
+            <h4 class="poppins-bold">¿Como funciona?</h4>
+            <p class="left-align light">Nuestro sistema de reconocimiento facial funciona por medio del analisis y procesado de patrones faciales, esto mediante vectores, lo que le permite almacenar y comparar posteriormente diferentes patrones faciales para determinar si existe alguna coincidencia.</p>
+            <br>
+            <hr>
+            <br>
+            <h4 class="poppins-bold">¿A quien va dirigido?</h4>
+            <p class="left-align light">Este sistema esta estrictamente dirigido al cuerpo docente y administrativo del area de la educación, como una herramienta de apoyo para evitar la suplantación de identidad en examenes presenciales.</p>
+          
+          </div>
+        </div>
+  
+      </div>
+    </div>
+
+    <br><br>
+    <footer class="page-footer blue darken-4">
+        <div class="container">
+          <div class="row">
+    
+            <div class="col l6 s12">
+              <h5 class="white-text tiny5-regular">SISTEMA DE RECONOCIMIENTO FACIAL</h5>
+              <p class="grey-text text-lighten-4">Nuestro sistema tiene la finalidad de evitar la suplantación de identidad para los examenes presenciales, principalmente enfocado en examenes de gran peso e importancia.</p>
+    
+    
+            </div>
+    
+            <div class="col l3 s12">
+              <h5 class="white-text">Desarrollador</h5>
+              <ul>
+                <li><a class="white-text" href="#!">Acevedo Romo Jimena Olivia</a></li>
+                <li><a class="white-text" href="#!">Flores Cornejo David Nahum</a></li>
+                <li><a class="white-text" href="#!">Licea Castro Leonardo</a></li>
+                <li><a class="white-text" href="#!">Zamora Montoya Laura Ivanna</a></li>
+              </ul>
+            </div>
+    
+            <div class="col l3 s12">
+              <h5 class="white-text">Contacto</h5>
+              <ul>
+                <li><a class="white-text" href="#!">(52)-55-2343-2453</a></li>
+                <li><a class="white-text" href="#!">(52)-55-7283-1092</a></li>
+                <li><a class="white-text" href="#!">(52)-55-9012-9302</a></li>
+                <li><a class="white-text" href="#!">(52)-55-8394-9203</a></li>
+              </ul>
+            </div>
+    
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          Formación <a class="brown-text text-lighten-3" href="http://materializecss.com">ESCOM IPN - MX</a>
+          </div>
+        </div>
+      </footer>
 
     <script>
         // Acceder a la cámara y mostrarla en el elemento 'video'
@@ -84,5 +282,10 @@
             });
         }
     </script>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="/static/js/materialize.js"></script>
+  <script src="/static/js/init.js"></script>
 </body>
 </html>

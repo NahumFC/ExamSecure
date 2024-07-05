@@ -11,42 +11,160 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/normalize.css">
     <link rel="stylesheet" href="/static/css/styles.css">
+
+         <!--IMPORTACIONES REQUERIDAS MATERIALIZE-->
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!--IMPORTACIONES REQUERIDAS FONT AWESOME-->
+  <link href="/static/FontAwesome/fontawesome-free-6.5.2-web/css/all.css" rel="stylesheet"/>
+
+  <!--FUENTES DE GOOGLE-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiny5&display=swap" rel="stylesheet">
+ 
+
+  <style>
+    .brand-logo {
+      color: white !important; /* Color blanco para el logo */
+    }
+
+    .tiny5-regular {
+    font-family: "Tiny5", sans-serif;
+    font-weight: 1000;
+    font-style: normal;
+    }
+
+   .poppins-bold {
+   font-family: "Poppins", sans-serif;
+   font-weight: 700;
+   font-style: normal;
+   }
+
+   .custom-background {
+    background-color: white;
+    padding: 20px; /* Esto es opcional, agrega espacio alrededor del formulario */
+   }
+  
+   body {
+            background-image: url('/static/images/x.avif'); /* Cambia esta ruta por la ruta de tu imagen */
+            background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-attachment: fixed; /* Hace que la imagen de fondo permanezca fija */
+            background-position: center; /* Centra la imagen */
+        }
+
+  </style>
+
 </head>
 
 <body>
-    <div class="contenedor-formulario contenedor">
-        <div class="imagen-formulario">
-            <video id="video" width="670" height="580" autoplay></video>
-            <canvas id="canvas" width="670" height="580" style="display:none;"></canvas>
-        </div>
 
-        <form id="registerForm" class="formulario" onsubmit="submitForm(event)">
-            <div class="texto-formulario">
-                <p><img src="/static/images/Logo.png" width="200" height="200"/>
-                    <br>Registro Aerosecure
-                </p>
-            </div>
-            <div class="input">
-                <label for="nombre_aplica">Nombre de usuario</label>
-                <input placeholder="Ingresa tu nombre" type="text" name="nombre_aplica" id="nombre_aplica" required>
-            </div>
-            <div class="input">
-                <label for="numero_aplica">Numero de trabajador</label>
-                <input placeholder="Ingresa numero de trabajador" type="text" name="numero_aplica" id="numero_aplica" required>
-            </div>
-            <div class="input">
-                <label for="email_aplica">Email</label>
-                <input placeholder="Ingresa tu email" type="text" name="email_aplica" id="email_aplica" required>                
-            </div>
-            <div class="input">
-                <label for="contraseña">Contraseña</label>
-                <input placeholder="Ingresa tu contraseña" type="password" name="password" id="contraseña" required>
-            <div class="input">
-                <input type="submit" value="Registrar">
-            </div>
-        </form>
+  <nav class="blue darken-4" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo tiny5-regular">TestGuardPRO</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="waves-effect waves-light btn poppins-bold" href="">Inicio</a></li>
+      </ul>
+  
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Iniciar Sesión</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  
+
+  <div class="contenedor-formulario ">
+
+    <div class="imagen-formulario">
+        <video id="video" width="670" height="580" autoplay></video>
+        <canvas id="canvas" width="670" height="580" style="display:none;"></canvas>
+    </div>
+
+    <form id="registerForm" class="formulario" onsubmit="submitForm(event)">
+      <div class="texto-formulario">
+          <p><img src="/static/images/Logo.png" width="200" height="200"/>
+              <br>Registro TestGuardPRO
+          </p>
+      </div>
+
+      <div class="input">
+          <label for="nombre_aplica">Nombre de usuario</label>
+          <input placeholder="Ingresa tu nombre" type="text" name="nombre_aplica" id="nombre_aplica" required>
+      </div>
+
+      <div class="input">
+          <label for="numero_aplica">Numero de trabajador</label>
+          <input placeholder="Ingresa numero de trabajador" type="text" name="numero_aplica" id="numero_aplica" required>
+      </div>
+
+      <div class="input">
+          <label for="email_aplica">Email</label>
+          <input placeholder="Ingresa tu email" type="text" name="email_aplica" id="email_aplica" required>                
+      </div>
+
+      <div class="input">
+          <label for="contraseña">Contraseña</label>
+          <input placeholder="Ingresa tu contraseña" type="password" name="password" id="contraseña" required>
+      </div>
+      <div class="input">
+          <input type="submit" value="Registrar">
+      </div>
+  </form>
         <div id="mensajeExito" style="color:green;"></div> 
     </div>
+
+    
+    <br><br><br><br><br><br><br><br><br><br>
+    <footer class="page-footer blue darken-4">
+        <div class="container">
+          <div class="row">
+    
+            <div class="col l6 s12">
+              <h5 class="white-text tiny5-regular">SISTEMA DE RECONOCIMIENTO FACIAL</h5>
+              <p class="grey-text text-lighten-4">Nuestro sistema tiene la finalidad de evitar la suplantación de identidad para los examenes presenciales, principalmente enfocado en examenes de gran peso e importancia.</p>
+    
+    
+            </div>
+    
+            <div class="col l3 s12">
+              <h5 class="white-text">Desarrollador</h5>
+              <ul>
+                <li><a class="white-text" href="#!">Acevedo Romo Jimena Olivia</a></li>
+                <li><a class="white-text" href="#!">Flores Cornejo David Nahum</a></li>
+                <li><a class="white-text" href="#!">Licea Castro Leonardo</a></li>
+                <li><a class="white-text" href="#!">Zamora Montoya Laura Ivanna</a></li>
+              </ul>
+            </div>
+    
+            <div class="col l3 s12">
+              <h5 class="white-text">Contacto</h5>
+              <ul>
+                <li><a class="white-text" href="#!">(52)-55-2343-2453</a></li>
+                <li><a class="white-text" href="#!">(52)-55-7283-1092</a></li>
+                <li><a class="white-text" href="#!">(52)-55-9012-9302</a></li>
+                <li><a class="white-text" href="#!">(52)-55-8394-9203</a></li>
+              </ul>
+            </div>
+    
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          Formación <a class="brown-text text-lighten-3" href="http://materializecss.com">ESCOM IPN - MX</a>
+          </div>
+        </div>
+      </footer>
+    
+
     <script>
         const video = document.getElementById('video');
         navigator.mediaDevices.getUserMedia({ video: true })
@@ -95,5 +213,7 @@
             return new Blob([ab], { type: 'image/png' });
         }
     </script>
+
+    
 </body>
 </html>

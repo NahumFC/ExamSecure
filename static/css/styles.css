@@ -13,15 +13,7 @@ html{
     box-sizing: inherit;
 }
 
-body{
-    font-family: var(--fuente);
-    background-image: url("../images/gb.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    align-items: center;
-    height: 100vh;
-}
+
 
 .contenedor{
     margin: 0 auto;
